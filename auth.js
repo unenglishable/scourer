@@ -1,3 +1,3 @@
-module.exports = auth = {};
-
-auth.clientId = process.env.IMGUR_CLIENT_ID;
+module.exports = {
+  clientId: process.env.IMGUR_CLIENT_ID;
+};
