@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/unenglishable/scourer#readme",
   "dependencies": {
+    "commander": "^2.9.0",
     "request": "^2.65.0",
     "urijs": "^1.16.1"
   }
