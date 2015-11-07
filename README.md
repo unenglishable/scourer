@@ -12,6 +12,18 @@ To download and use the package with npm:
 
 `npm install scourer`
 
+### Authentication
+
+This tool currently uses dotenv to load IMGUR_CLIENT_ID into `process.env` from
+the environment file `.env`.  The IMGUR_CLIENT_ID is required to make Imgur API
+calls.  You can get one by signing up for an Imgur account and [requesting
+credentials](https://api.imgur.com/oauth2#registration).
+
+Note: The "requesting credentials" link is
+[currently broken](https://community.imgur.com/t/problem-with-imgur-api-documentation/15133)
+; if it still is when you read this, just scroll down to the
+"Registration" section.
+
 ## Usage
 
 Before the full API doc is released, you can get a feel of the tool by using the
