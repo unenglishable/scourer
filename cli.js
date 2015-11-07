@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var program = require('commander');
 var search = require('./gallery/search');
 
@@ -25,3 +26,18 @@ var queryOptions = {
   type: program.type,
   size: program.size
 };
+
+search(queryOptions, function(err, response, body) {
+  if (err) { console.log(err); }
+  else if (response.statusCode === 200) {
+    if (body.length === 0) {
+      console.log('no results!');
+    }
+    else {
+      data = JSON.parse(body).data;
+      data.forEach(function(datum) {
+        console.log(datum.link);
+      });
+    }
+  }
+});
