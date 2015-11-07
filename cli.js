@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var program = require('commander');
-var gallery = require('./gallery');
+var gallery = require('./').gallery;
 
 program
   .version(require('./package.json').version)
