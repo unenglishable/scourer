@@ -1,5 +1,5 @@
-# authentication file
-auth.json
+# environment file
+.env
 
 # Logs
 logs
