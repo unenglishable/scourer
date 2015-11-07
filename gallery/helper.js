@@ -5,7 +5,7 @@ module.exports = {
       callback(null, JSON.parse(body).data);
     }
     else {
-      callback(null, [], response.statusCode);
+      callback(new Error(response.body));
     }
   }
 };
