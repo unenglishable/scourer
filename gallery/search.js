@@ -1,6 +1,6 @@
 var request = require('request');
 var URI = require('urijs');
-var clientId = require('./auth.json')['client_id'];
+var clientId = require('../auth.json')['client_id'];
 var gallerySearchURL = 'https://api.imgur.com/3/gallery/search/';
 
 module.exports = function(params, callback) {
