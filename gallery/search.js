@@ -6,6 +6,7 @@ var helper = require('./helper');
 
 module.exports = function(params, callback) {
   var queryParams = {
+    page: params.page,
     q_all: params.all,
     q_any: params.any,
     q_exactly: params.exactly,
