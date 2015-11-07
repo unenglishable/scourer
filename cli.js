@@ -32,17 +32,14 @@ var queryOptions = {
   size: program.size
 };
 
-gallery.search(queryOptions, function(err, response, body) {
-  if (err) { console.log(err); }
-  else if (response.statusCode === 200) {
-    if (body.length === 0) {
-      console.log('no results!');
-    }
-    else {
-      data = JSON.parse(body).data;
-      data.forEach(function(datum) {
-        console.log(datum.link);
-      });
-    }
+gallery.search(queryOptions, function(error, data) {
+  if (error) { console.log(error); }
+  else if (data.length === 0) {
+    console.log('no results!');
+  }
+  else {
+    data.forEach(function(datum) {
+      console.log(datum.link);
+    });
   }
 });
