@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var program = require('commander');
-var search = require('./gallery/search');
+var gallery = require('./gallery');
 
 program
   .version(require('./package.json').version)
@@ -27,7 +27,7 @@ var queryOptions = {
   size: program.size
 };
 
-search(queryOptions, function(err, response, body) {
+gallery.search(queryOptions, function(err, response, body) {
   if (err) { console.log(err); }
   else if (response.statusCode === 200) {
     if (body.length === 0) {
