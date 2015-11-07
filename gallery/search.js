@@ -2,6 +2,7 @@ var request = require('request');
 var URI = require('urijs');
 var clientId = require('../auth.json')['client_id'];
 var gallerySearchURL = 'https://api.imgur.com/3/gallery/search/';
+var helper = require('./helper');
 
 module.exports = function(params, callback) {
   var queryParams = {
@@ -19,5 +20,7 @@ module.exports = function(params, callback) {
       'Authorization': 'Client-ID ' + clientId
     }
   };
-  request(options, callback);
+  request(options, function(error, response, body) {
+    helper.handle(error, response, body, callback);
+  });
 };
