@@ -4,5 +4,8 @@ module.exports = {
     else if (response.statusCode === 200) {
       callback(null, JSON.parse(body).data);
     }
+    else {
+      callback(null, []);
+    }
   }
 };
