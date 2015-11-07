@@ -5,6 +5,8 @@ var gallery = require('./gallery');
 program
   .version(require('./package.json').version)
   .option('-s, --sort <value>', 'time | viral | top', /^time|viral|top/i)
+  .option('-w, --window <value>', 'Change the date range of the request if the sort is \'top\', day | week | month | year | all', /^day|week|month|year|all/i)
+  .option('-p, --page <value>', 'the data paging number')
   .option('-a, --all <terms>', 'Search for all of these words')
   .option('-y, --any <terms>', 'Search for any of these words')
   .option('-e, --exactly <phrase>', 'Search for exactly this word or phrase')
@@ -16,6 +18,9 @@ program
 if (typeof program.sort != 'string') {
   delete program.sort;
 }
+if (typeof program.window != 'window') {
+  delete program.window;
+}
 if (typeof program.size != 'string') {
   delete program.size;
 }
@@ -24,6 +29,8 @@ if (typeof program.type != 'string') {
 }
 var queryOptions = {
   sort: program.sort,
+  window: program.window,
+  page: program.page,
   all: program.all,
   any: program.any,
   exactly: program.exactly,
